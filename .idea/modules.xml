@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CDP.iml" filepath="$PROJECT_DIR$/CDP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JarClassLoader/classloader.iml" filepath="$PROJECT_DIR$/JarClassLoader/classloader.iml" />
+    </modules>
+  </component>
+</project>
+
