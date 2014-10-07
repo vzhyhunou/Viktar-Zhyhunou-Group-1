@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7c4623-8fca-4960-8574-8b9495c68e4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JarClassLoader/src/main/java/com/epam/darafeyeu/App.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CDP.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JarClassLoader/src/main/java/com/epam/darafeyeu/ClassToLoad.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JarClassLoader/JarClassLoader.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JarClassLoader/src/main/java/com/epam/darafeyeu/JarClassLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JarClassLoader/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logger.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JarClassLoader/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CDP.iws" />
     <ignored path=".idea/workspace.xml" />
