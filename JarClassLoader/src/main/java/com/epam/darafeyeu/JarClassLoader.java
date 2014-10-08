@@ -60,13 +60,11 @@ public class JarClassLoader extends ClassLoader {
 
            if (className.equalsIgnoreCase(name)) {
               try {
-                byte[] byteArray = loadJarEntryAsBytes(jarFile, jarEntry);
-                  try {
-                     return defineClass(className, byteArray, 0, byteArray.length);
-                  } catch (ClassFormatError e) {
-                     throw new ClassNotFoundException();
-                  }
-              } catch(IOException ex) {
+                 byte[] byteArray = loadJarEntryAsBytes(jarFile, jarEntry);
+                 return defineClass(className, byteArray, 0, byteArray.length);
+              } catch (ClassFormatError e) {
+                 throw new ClassNotFoundException();
+              } catch (IOException ex) {
                  throw new ClassNotFoundException();
               }
            }
@@ -78,26 +76,30 @@ public class JarClassLoader extends ClassLoader {
     private static byte[] loadJarEntryAsBytes(JarFile jarFile, JarEntry jarEntry) throws IOException {
 
         DataInputStream dataInputStream = null;
+        byte[] data = null;
 
-        long size = jarEntry.getSize();
-        if (size <= 0 || size >= Integer.MAX_VALUE) {
-          return null;
-        }
-
-        byte[] data = new byte[(int) size];
-
-        InputStream is = jarFile.getInputStream(jarEntry);
-        dataInputStream = new DataInputStream(is);
         try {
-          dataInputStream.readFully(data);
-        } finally {
-             try {
-                 dataInputStream.close();
-             } catch (IOException e) {
-             }
+            long size = jarEntry.getSize();
+            if (size <= 0 || size >= Integer.MAX_VALUE) {
+                return null;
+            }
 
+            data = new byte[(int) size];
+            InputStream is = jarFile.getInputStream(jarEntry);
+            dataInputStream = new DataInputStream(is);
+            dataInputStream.readFully(data);
+        } catch (IOException ex) {
+            logger.error(ex.getMessage());
+            throw new IOException();
+        } finally {
+           if (dataInputStream != null)
+               try {
+                   dataInputStream.close();
+               } catch (IOException ex) {
+                   logger.error(ex.getMessage());
+                   throw new IOException();
+               }
         }
         return data;
     }
-
 }
