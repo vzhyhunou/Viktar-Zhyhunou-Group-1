@@ -1,4 +1,6 @@
 build/
+target/
+testfolder/
 .settings/
 .classpath/
 .project/
