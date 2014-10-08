@@ -8,7 +8,7 @@ public class ClassToLoadImpl  implements ClassToLoad {
 
     public void sayHello(final String name){
 
-        logger.info("Hello " + name);
+        logger.info("Hello " + name +"!");
     }
 
 }
