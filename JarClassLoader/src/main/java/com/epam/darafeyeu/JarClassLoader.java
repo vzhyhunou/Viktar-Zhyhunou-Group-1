@@ -3,9 +3,6 @@ package com.epam.darafeyeu;
 import org.apache.log4j.Logger;
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.security.*;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -78,7 +75,7 @@ public class JarClassLoader extends ClassLoader {
     }
 
 
-    public static byte[] loadJarEntryAsBytes(JarFile jarFile, JarEntry jarEntry) throws IOException {
+    private static byte[] loadJarEntryAsBytes(JarFile jarFile, JarEntry jarEntry) throws IOException {
 
         DataInputStream dataInputStream = null;
 
@@ -94,12 +91,11 @@ public class JarClassLoader extends ClassLoader {
         try {
           dataInputStream.readFully(data);
         } finally {
-            if (dataInputStream != null) {
-                try {
-                    dataInputStream.close();
-                } catch (IOException e) {
-                }
-            }
+             try {
+                 dataInputStream.close();
+             } catch (IOException e) {
+             }
+
         }
         return data;
     }

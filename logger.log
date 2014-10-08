@@ -208,3 +208,21 @@
 3 - Exit
 2014-10-08 09:08:51 INFO  ClassToLoad:11 - Hello Aliaksandr
 2014-10-08 09:08:51 INFO  App:56 - Calss loader is sun.misc.Launcher$AppClassLoader@3326b249
+2014-10-08 11:33:41 INFO  App:25 - 
+1 - Load class and invoke method;
+2 - Help;
+3 - Exit
+2014-10-08 11:33:43 INFO  ClassToLoad:11 - Hello Aliaksandr
+2014-10-08 11:33:43 INFO  App:56 - Calss loader is sun.misc.Launcher$AppClassLoader@3326b249
+2014-10-08 11:34:27 INFO  App:25 - 
+1 - Load class and invoke method;
+2 - Help;
+3 - Exit
+2014-10-08 11:34:30 INFO  ClassToLoad:11 - Hello Aliaksandr
+2014-10-08 11:34:30 INFO  App:56 - Calss loader is sun.misc.Launcher$AppClassLoader@4aad3ba4
+2014-10-08 11:34:47 INFO  App:25 - 
+1 - Load class and invoke method;
+2 - Help;
+3 - Exit
+2014-10-08 11:34:49 INFO  ClassToLoad:11 - Hello Aliaksandr
+2014-10-08 11:34:49 INFO  App:56 - Calss loader is sun.misc.Launcher$AppClassLoader@3326b249
