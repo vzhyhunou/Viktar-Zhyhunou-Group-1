@@ -2,7 +2,7 @@ package com.epam.darafeyeu;
 
 import org.apache.log4j.Logger;
 
-public class ClassToLoad  implements IClassToLoad {
+public class ClassToLoadImpl  implements ClassToLoad {
 
     static final Logger logger = Logger.getLogger(ClassToLoad.class);
 

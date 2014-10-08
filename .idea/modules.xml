@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CDP.iml" filepath="$PROJECT_DIR$/CDP.iml" />
       <module fileurl="file://$PROJECT_DIR$/JarClassLoader/classloader.iml" filepath="$PROJECT_DIR$/JarClassLoader/classloader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/func/func.iml" filepath="$PROJECT_DIR$/func/func.iml" />
     </modules>
   </component>
 </project>

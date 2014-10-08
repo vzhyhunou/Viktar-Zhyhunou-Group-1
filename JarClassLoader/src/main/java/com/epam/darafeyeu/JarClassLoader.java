@@ -13,7 +13,7 @@ import java.util.jar.JarFile;
 public class JarClassLoader extends ClassLoader {
 
     static final Logger logger = Logger.getLogger(JarClassLoader.class);
-    public final static String PATH_TO_JAR = "/home/xdar/TRAINING/classloader-1.0-SNAPSHOT.jar";
+    public final static String PATH_TO_JAR = "jarToLoadFrom.jar";
 
 
     public JarClassLoader(ClassLoader parent) {

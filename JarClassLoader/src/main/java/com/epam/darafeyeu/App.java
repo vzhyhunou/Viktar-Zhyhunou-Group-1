@@ -30,13 +30,11 @@ public class App
                 switch (i) {
 
                     case 1:
-                        //logger.info("Please input full path to jar to load from");
-                        //String pathToJar = br.readLine();
                         loadFromJar();
                         break;
 
                     case 2:
-                        logger.info("\n-loads 'ClassToLoad' class from classloader-1.0.0.jar \n-invokes 'sayHello' method with input String parameter 'Aliaksandr'\n jar should be built previously using 'mvn package' command");
+                        logger.info("\n-loads 'ClassToLoad' class from jarToLoadFrom.jar \n-invokes 'sayHello' method with input String parameter 'Aliaksandr'\n jar should be built previously using 'mvn package' command");
                         break;
 
                     case 3:
@@ -52,8 +50,8 @@ public class App
     public static  void loadFromJar() throws  Exception{
 
         ClassLoader loader = new JarClassLoader();
-        Class clazz = Class.forName("com.epam.darafeyeu.ClassToLoad", true, loader);
-        IClassToLoad object = (IClassToLoad) clazz.newInstance();
+        Class clazz = Class.forName("com.epam.darafeyeu.ClassToLoadImpl", true, loader);
+        ClassToLoad object = (ClassToLoad) clazz.newInstance();
         object.sayHello("Aliaksandr");
         logger.info("Calss loader is "+object.getClass().getClassLoader().toString());
     }

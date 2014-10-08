@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/JarClassLoader" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/func/src/main/java/com/epam/darafeyeu/ClassToLoad.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/func/src/main/java/com/epam/darafeyeu/IClassToLoad.java" charset="UTF-8" />
   </component>
 </project>
 
