@@ -67,7 +67,7 @@
                         </manifest>
                     </archive>
                     <finalName>classloader</finalName>
-                    <outputDirectory>../testfolder</outputDirectory>
+                    <outputDirectory>../GarbageCollection</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

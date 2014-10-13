@@ -20,7 +20,7 @@
                 <version>2.4</version>
                 <configuration>
                     <finalName>jarToLoadFrom</finalName>
-                    <outputDirectory>../testfolder</outputDirectory>
+                    <outputDirectory>../GarbageCollection</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
