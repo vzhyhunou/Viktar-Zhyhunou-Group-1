@@ -10,4 +10,3 @@ target/
 *.ipr
 *.iml
 *.class
-logger.log
