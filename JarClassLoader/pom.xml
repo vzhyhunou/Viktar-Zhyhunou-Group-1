@@ -10,12 +10,14 @@
     <artifactId>classloader</artifactId>
     <packaging>jar</packaging>
 
-    <name>classloader</name>
+    <name>ClassLoader</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties><dependencies>
+    </properties>
+
+    <dependencies>
         <dependency>
             <groupId>com.epam.darafeyeu</groupId>
             <artifactId>func</artifactId>
