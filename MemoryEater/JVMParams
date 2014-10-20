@@ -1,1 +1,1 @@
--Xss2m -Xms512m -Xmx1024m -XX:SurvivorRatio=3
+-Xss2m -Xms512m -Xmx1024m -XX:SurvivorRatio=3 -XX:+PrintGCDetails
