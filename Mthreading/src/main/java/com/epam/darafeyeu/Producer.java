@@ -24,10 +24,10 @@ public class Producer  extends  Thread{
         for ( int i = 0; i < 10; i++ ) {
             Person person = new Person( "First Name " + i, "Last Name " + i );
             dataFile.writeToFile(person);
-            logger.info("Producer #" + this.number + " wrote: " + person.getFirstName());
-//            try {
-//                sleep(200);
-//            } catch (InterruptedException e) { }
+            //logger.info("Producer #" + this.number + " wrote: " + person.getFirstName());
+            try {
+                sleep(200);
+            } catch (InterruptedException e) { }
         }
         latch.countDown();
     }

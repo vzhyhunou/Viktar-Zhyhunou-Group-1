@@ -24,7 +24,7 @@ public class Consumer extends Thread{
     public void run() {
         for ( int i = 0; i < 10; i++ ) {
             Person person = dataFile.readFromFile(i);
-            logger.info("Consumer #" + this.number + " read: " + person.getFirstName());
+            //logger.info("Consumer #" + this.number + " read: " + person.getFirstName());
         }
         latch.countDown();
     }

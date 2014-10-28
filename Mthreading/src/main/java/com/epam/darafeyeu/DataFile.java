@@ -51,6 +51,7 @@ public class DataFile {
         }
 
         logger.info("readFromFile method is about to release synchronized section");
+        logger.info("Consumer has read: " + person.getFirstName());
         return person;
     }
 
@@ -76,6 +77,7 @@ public class DataFile {
 
         availableForReading = true;
         notifyAll();
+        logger.info("Producer has wrote: " + person.getFirstName());
         logger.info("The end of writeToFile");
     }
 }

@@ -15,10 +15,10 @@ import org.apache.log4j.Logger;
 public class ThreadFileReader {
 
     static final Logger logger = Logger.getLogger(ThreadFileReader.class);
+    final static String FILENAME = "data.dat";
 
     public static void main(String[] args) {
 
-        final String FILENAME = "data.dat";
         final CountDownLatch latch = new CountDownLatch(2);
 
         FileOutputStream fileOutputStream = null ;
