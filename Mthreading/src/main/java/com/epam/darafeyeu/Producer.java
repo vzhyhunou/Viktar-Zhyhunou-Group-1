@@ -25,9 +25,6 @@ public class Producer  extends  Thread{
             Person person = new Person( "First Name " + i, "Last Name " + i );
             dataFile.writeToFile(person);
             //logger.info("Producer #" + this.number + " wrote: " + person.getFirstName());
-            try {
-                sleep(200);
-            } catch (InterruptedException e) { }
         }
         latch.countDown();
     }

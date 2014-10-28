@@ -10,7 +10,7 @@ public class MemoryEater {
     static final Logger logger = Logger.getLogger("MemoryEater.class");
     static final int MEGABYTES_TO_BYTES_MULTIPLIER = 1024 * 1024;
     // the less ratio is the less often refs are deleted and the more heap memory is used
-    static final double TOTAL_MEM_RATIO = 0.001;
+    static final double TOTAL_MEM_RATIO = 0.01;
 
     public static void main(String[] args) {
 
