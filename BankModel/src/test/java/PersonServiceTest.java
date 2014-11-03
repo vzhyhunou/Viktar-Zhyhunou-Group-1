@@ -19,8 +19,8 @@ import java.util.List;
 
 public class PersonServiceTest  {
 
-    final Logger logger = Logger.getLogger(PersonServiceTest.class);
-    final String FILENAME = "testData.dat";
+    static final Logger logger = Logger.getLogger(PersonServiceTest.class);
+    static final String FILENAME = "testData.dat";
 
     PersonService personService = null;
     ObjectOutputStream objectOutputStream = null;
