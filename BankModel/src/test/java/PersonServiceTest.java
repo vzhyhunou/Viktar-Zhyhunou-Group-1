@@ -1,9 +1,8 @@
-import com.epam.darafeyeu.Person;
-import com.epam.darafeyeu.dao.PersonDAOImpl;
+import com.epam.darafeyeu.domain.Person;
 import com.epam.darafeyeu.exceptions.PersonNotFoundException;
 import com.epam.darafeyeu.services.PersonService;
 import com.epam.darafeyeu.utils.BankModelUtils;
-
+import com.epam.darafeyeu.dao.PersonDAOImpl;
 import org.apache.log4j.Logger;
 
 import org.junit.*;
@@ -22,11 +21,17 @@ public class PersonServiceTest  {
     static final Logger logger = Logger.getLogger(PersonServiceTest.class);
     static final String FILENAME = "testData.dat";
 
-    PersonService personService = null;
+    static PersonService personService = null;
     ObjectOutputStream objectOutputStream = null;
 
+
+    @BeforeClass
+    public static void setUpClass(){
+        personService = new PersonService(new PersonDAOImpl("testData.dat"));
+    }
+
     @Before
-    public void setUp(){
+    public void setUpTest(){
 
         logger.info("setUp");
 
@@ -38,8 +43,6 @@ public class PersonServiceTest  {
         } finally {
             BankModelUtils.closeObjectOutputStream(objectOutputStream);
         }
-
-        personService = new PersonService(new PersonDAOImpl("testData.dat"));
     }
 
 
