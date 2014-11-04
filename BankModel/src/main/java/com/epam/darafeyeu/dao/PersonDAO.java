@@ -1,6 +1,6 @@
 package com.epam.darafeyeu.dao;
 
-import com.epam.darafeyeu.Person;
+import com.epam.darafeyeu.domain.Person;
 import com.epam.darafeyeu.exceptions.PersonNotFoundException;
 
 import java.util.List;

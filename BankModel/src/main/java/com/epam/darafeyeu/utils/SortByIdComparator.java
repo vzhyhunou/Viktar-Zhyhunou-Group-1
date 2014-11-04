@@ -1,6 +1,6 @@
 package com.epam.darafeyeu.utils;
 
-import com.epam.darafeyeu.Person;
+import com.epam.darafeyeu.domain.Person;
 
 import java.util.Comparator;
 

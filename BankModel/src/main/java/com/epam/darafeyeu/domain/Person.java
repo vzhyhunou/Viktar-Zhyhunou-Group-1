@@ -1,4 +1,4 @@
-package com.epam.darafeyeu;
+package com.epam.darafeyeu.domain;
 
 import java.io.Serializable;
 

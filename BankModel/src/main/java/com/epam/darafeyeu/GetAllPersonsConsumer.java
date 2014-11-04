@@ -1,31 +1,16 @@
 package com.epam.darafeyeu;
 
 import com.epam.darafeyeu.dao.PersonDAO;
-import com.epam.darafeyeu.dao.PersonDAOImpl;
+import com.epam.darafeyeu.domain.Person;
 import com.epam.darafeyeu.services.PersonService;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 /**
- *
+ * Class that represents getting all persons in separate thread
  */
-//public class GetAllPersonsConsumer  implements Callable<List<Person>> {
-//
-//    PersonService personService = null;
-//
-//    public GetAllPersonsConsumer(PersonDAOImpl personDAO){
-//        this.personService = new PersonService(personDAO);
-//    }
-//
-//    public List<Person> call() {
-//        return personService.getAllPersons();
-//    }
-//}
 
-public class GetAllPersonsConsumer  extends  Thread
-{
+public class GetAllPersonsConsumer extends Thread {
 
     PersonService personService = null;
     List<Person> persons;

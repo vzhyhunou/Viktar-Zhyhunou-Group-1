@@ -1,6 +1,6 @@
 package com.epam.darafeyeu.utils;
 
-import com.epam.darafeyeu.Person;
+import com.epam.darafeyeu.domain.Person;
 import org.apache.log4j.Logger;
 
 import java.io.File;

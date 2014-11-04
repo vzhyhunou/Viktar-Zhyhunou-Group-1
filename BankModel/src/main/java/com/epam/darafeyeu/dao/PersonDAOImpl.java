@@ -1,6 +1,6 @@
 package com.epam.darafeyeu.dao;
 
-import com.epam.darafeyeu.*;
+import com.epam.darafeyeu.domain.Person;
 import com.epam.darafeyeu.exceptions.PersonNotFoundException;
 import com.epam.darafeyeu.utils.BankModelUtils;
 import org.apache.log4j.Logger;

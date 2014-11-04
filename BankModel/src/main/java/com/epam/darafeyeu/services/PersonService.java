@@ -1,12 +1,9 @@
 package com.epam.darafeyeu.services;
 
-import com.epam.darafeyeu.Person;
-import com.epam.darafeyeu.ThreadFileReader;
+import com.epam.darafeyeu.domain.Person;
 import com.epam.darafeyeu.dao.PersonDAO;
 import com.epam.darafeyeu.exceptions.PersonNotFoundException;
 import org.apache.log4j.Logger;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
