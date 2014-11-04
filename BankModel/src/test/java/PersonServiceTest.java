@@ -13,13 +13,13 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 /**
- *
+ * Junit tests for person service
  */
 
 public class PersonServiceTest  {
 
-    static final Logger logger = Logger.getLogger(PersonServiceTest.class);
-    static final String FILENAME = "testData.dat";
+    private static final Logger logger = Logger.getLogger(PersonServiceTest.class);
+    private static final String FILENAME = "testData.dat";
 
     static PersonService personService = null;
     ObjectOutputStream objectOutputStream = null;
@@ -82,9 +82,9 @@ public class PersonServiceTest  {
         List<Person> persons = personService.getAllPersons();
 
         assertEquals(persons.size(),3);
-        assertEquals(persons.get(0).getId().intValue(),1);
-        assertEquals(persons.get(1).getId().intValue(),2);
-        assertEquals(persons.get(2).getId().intValue(),3);
+        assertEquals(1,persons.get(0).getId().intValue());
+        assertEquals(2,persons.get(1).getId().intValue());
+        assertEquals(3,persons.get(2).getId().intValue());
     }
 
     @Test (expected =  PersonNotFoundException.class)

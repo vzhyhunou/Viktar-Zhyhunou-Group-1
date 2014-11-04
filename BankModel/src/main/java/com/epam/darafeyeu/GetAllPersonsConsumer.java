@@ -12,8 +12,8 @@ import java.util.List;
 
 public class GetAllPersonsConsumer extends Thread {
 
-    PersonService personService = null;
-    List<Person> persons;
+    private PersonService personService = null;
+    private List<Person> persons;
 
     public GetAllPersonsConsumer(PersonDAO personDAO, List<Person> persons){
         this.personService = new PersonService(personDAO);

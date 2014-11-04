@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class PersonDAOImpl implements PersonDAO
 {
-    static final Logger logger = Logger.getLogger(PersonDAOImpl.class);
+    private static final Logger logger = Logger.getLogger(PersonDAOImpl.class);
     final String FILENAME;
 
     public PersonDAOImpl(final String FILENAME) {
