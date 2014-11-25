@@ -12,7 +12,7 @@ import java.io.IOException;
 
 
 
-@WebServlet(description = "Add Customer Servlet", urlPatterns = {"/AddCompanyServlet", "/AddCompanyServlet.do"})
+@WebServlet(description = "Add Customer Servlet", urlPatterns = {"/AddCustomerServlet", "/AddCustomerServlet.do"})
 public class AddCustomerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
