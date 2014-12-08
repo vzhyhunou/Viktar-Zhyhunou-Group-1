@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.password">ttt</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mashdb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hbm2ddl.auto">create</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">false</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        <mapping class="com.epam.darafeyeu.domain.Employee"/>
+        <mapping class="com.epam.darafeyeu.domain.EmployeePersonalInfo"/>
+        <mapping class="com.epam.darafeyeu.domain.Unit"/>
+        <mapping class="com.epam.darafeyeu.domain.Project"/>
+
+	</session-factory>
+</hibernate-configuration>
