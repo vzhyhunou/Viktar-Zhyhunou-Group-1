@@ -41,8 +41,5 @@ public class App
         session.close();
         HibernateUtil.shutdown();
 
-
-
-
     }
 }
