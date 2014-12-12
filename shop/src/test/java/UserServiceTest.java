@@ -1,5 +1,3 @@
-package java;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.shop.api.impl.UserServiceImpl;
