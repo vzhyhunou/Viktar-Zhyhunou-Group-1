@@ -1,14 +1,16 @@
+package java;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.shop.api.impl.UserServiceImpl;
 import org.shop.data.User;
-import org.shop.repository.factory.UserRepositoryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-
-import org.junit.runner.RunWith;
-import org.junit.*;
-import static org.junit.Assert.*;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by xdar on 12.12.14.

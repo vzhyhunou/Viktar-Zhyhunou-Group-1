@@ -1,15 +1,18 @@
-import org.junit.*;
-import org.junit.runner.RunWith;
-import org.shop.data.*;
+package java;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.shop.common.Products;
+import org.shop.data.Order;
+import org.shop.data.Product;
+import org.shop.data.Proposal;
+import org.shop.data.User;
 import org.shop.repository.map.OrderMapRepository;
 import org.shop.repository.map.ProductMapRepository;
 import org.shop.repository.map.ProposalMapRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import org.shop.common.Products;
 
 import static org.junit.Assert.*;
 
