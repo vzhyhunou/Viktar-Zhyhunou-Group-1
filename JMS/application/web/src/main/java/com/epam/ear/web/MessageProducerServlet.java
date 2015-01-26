@@ -18,24 +18,24 @@ import java.util.Hashtable;
 @WebServlet(description = "MessageProducerServlet", urlPatterns = {"/JMSServlet", "/JMSServlet.do"})
 public class MessageProducerServlet extends HttpServlet {
 
-    ConnectionFactory cf = null;
-    Context ic = null;
-    Connection connection = null;
-    Session session = null;
+    TopicConnectionFactory topicConnectionFactory = null;
+    Context initialContext = null;
+    TopicConnection topicConnection = null;
+    TopicSession topicSession = null;
     Topic topic = null;
-    MessageProducer publisher = null;
+    TopicPublisher topicPublisher = null;
 
     public void init(){
         System.out.println("!!!!!!!!!!!!INIT SERVLET!!!!!!!!!!!!!");
 
         try {
-            ic = getContext();
-            cf = (ConnectionFactory)ic.lookup("ConnectionFactory");
-            topic = (Topic)ic.lookup("topic/test");
-            connection = cf.createConnection();
-            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            publisher = session.createProducer(topic);
-            connection.start();
+            initialContext = getContext();
+            topicConnectionFactory = (TopicConnectionFactory)initialContext.lookup("ConnectionFactory");
+            topic = (Topic)initialContext.lookup("topic/test");
+            topicConnection = topicConnectionFactory.createTopicConnection();
+            topicSession = topicConnection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
+            topicPublisher = topicSession.createPublisher(topic);
+            topicConnection.start();
         } catch (NamingException e) {
             e.printStackTrace();
         } catch (JMSException e) {
@@ -48,8 +48,8 @@ public class MessageProducerServlet extends HttpServlet {
         try {
             System.out.println("!!!!!!!!!!!!!!!!!!!!!!SENDING MESSAGE!!!!!!!!!!!!!!!!!!!!!!");
             String name = request.getParameter("name");
-            TextMessage message = session.createTextMessage(name);
-            publisher.send(message);
+            TextMessage message = topicSession.createTextMessage(name);
+            topicPublisher.publish(message);
         }
         catch (JMSException e) {
             e.printStackTrace();
