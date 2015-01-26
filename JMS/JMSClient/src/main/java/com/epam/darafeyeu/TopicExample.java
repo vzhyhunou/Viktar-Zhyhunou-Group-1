@@ -11,41 +11,40 @@ public class TopicExample implements MessageListener
 {
     public void example() throws Exception
     {
-        Context ic = null;
-        ConnectionFactory cf;
-        Connection connection =  null;
+        Context initialContext = null;
+        TopicConnectionFactory topicConnectionFactory;
+        TopicConnection topicConnection =  null;
 
         try
         {
-            ic = getContext();
+            initialContext = getContext();
 
-            cf = (ConnectionFactory)ic.lookup("jms/RemoteConnectionFactory");
-            Topic topic = (Topic)ic.lookup("jms/topic/test");
+            topicConnectionFactory = (TopicConnectionFactory)initialContext.lookup("jms/RemoteConnectionFactory");
+            Topic topic = (Topic)initialContext.lookup("jms/topic/test");
 
-            connection = cf.createConnection();
-            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            MessageConsumer subscriber = session.createConsumer(topic);
+            topicConnection = topicConnectionFactory.createTopicConnection();
+            TopicSession topicSession = topicConnection.createTopicSession(false, TopicSession.AUTO_ACKNOWLEDGE);
+            topicSession.createSubscriber(topic).setMessageListener(this);
 
-            subscriber.setMessageListener(this);
-            connection.start();
+            topicConnection.start();
 
             System.out.print("Waiting for messages. Type Enter to exit\n");
             System.in.read();
         }
         finally
         {
-            if (ic != null)
+            if (initialContext != null)
             {
                 try
                 {
-                    ic.close();
+                    initialContext.close();
                 }
                 catch(Exception e)
                 {
                     throw e;
                 }
             }
-            closeConnection(connection);
+            closeConnection(topicConnection);
         }
     }
     public synchronized void onMessage(Message message)
