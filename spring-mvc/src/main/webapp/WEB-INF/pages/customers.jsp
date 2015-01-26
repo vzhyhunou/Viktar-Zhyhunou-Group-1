@@ -10,6 +10,6 @@
 
 <c:if test="${customers != null}">
     <c:forEach var="customer" items="${customers}">
-        <c:out value="${customer.getName()}"/></br>
+        <c:out value="${customer.name}"/></br>
     </c:forEach>
 </c:if>

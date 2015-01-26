@@ -17,8 +17,8 @@
 
       <c:choose>
         <c:when test="${customer != null}">
-           Customer name with id <c:out value="${customer.getId()}"/>
-           is <c:out value="${customer.getName()}"/>
+           Customer name with id <c:out value="${customer.id}"/>
+           is <c:out value="${customer.name}"/>
         </c:when>
         <c:otherwise>
            Customer with id <b><c:out value="${customerId}"/></b> is not found!
