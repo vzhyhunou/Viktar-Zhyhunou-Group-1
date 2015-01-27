@@ -39,7 +39,8 @@ public class ServletTest extends Mockito {
         HttpServletResponse response = mock(HttpServletResponse.class);
         RequestDispatcher requestDispatcher = mock(RequestDispatcher.class);
 
-        when( request.getRequestDispatcher( anyString() ) ).thenReturn( requestDispatcher );
+        when( request.getRequestDispatcher( anyString() ) )
+                .thenReturn( requestDispatcher );
         messageProducerServlet.doGet(request, response);
 
         verify(request, times(1) ).getParameter( "name" );
