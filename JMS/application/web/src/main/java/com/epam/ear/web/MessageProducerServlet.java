@@ -1,6 +1,13 @@
 package com.epam.ear.web;
 
-import javax.jms.*;
+import javax.jms.TopicConnectionFactory;
+import javax.jms.TopicConnection;
+import javax.jms.TopicSession;
+import javax.jms.TopicPublisher;
+import javax.jms.Topic;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+import javax.jms.JMSException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -15,25 +22,29 @@ import java.util.Hashtable;
 /**
  * Created by Alex on 23.01.15.
  */
-@WebServlet(description = "MessageProducerServlet", urlPatterns = {"/JMSServlet", "/JMSServlet.do"})
+@WebServlet(description = "MessageProducerServlet",
+   urlPatterns = {"/JMSServlet", "/JMSServlet.do" })
 public class MessageProducerServlet extends HttpServlet {
 
-    TopicConnectionFactory topicConnectionFactory = null;
-    Context initialContext = null;
-    TopicConnection topicConnection = null;
-    TopicSession topicSession = null;
-    Topic topic = null;
-    TopicPublisher topicPublisher = null;
+    private TopicConnectionFactory topicConnectionFactory = null;
+    private Context initialContext = null;
+    private TopicConnection topicConnection = null;
+    private TopicSession topicSession = null;
+    private Topic topic = null;
+    private TopicPublisher topicPublisher = null;
 
-    public void init(){
-        System.out.println("!!!!!!!!!!!!INIT SERVLET!!!!!!!!!!!!!");
+    @Override
+    public final void init() {
+        System.out.println("!!!!!!!INIT SERVLET!!!!!!!!");
 
         try {
             initialContext = getContext();
-            topicConnectionFactory = (TopicConnectionFactory)initialContext.lookup("ConnectionFactory");
-            topic = (Topic)initialContext.lookup("topic/test");
+            topicConnectionFactory = (TopicConnectionFactory) initialContext
+                    .lookup("ConnectionFactory");
+            topic = (Topic) initialContext.lookup("topic/test");
             topicConnection = topicConnectionFactory.createTopicConnection();
-            topicSession = topicConnection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
+            topicSession = topicConnection.createTopicSession(false,
+                    Session.AUTO_ACKNOWLEDGE);
             topicPublisher = topicSession.createPublisher(topic);
             topicConnection.start();
         } catch (NamingException e) {
@@ -43,10 +54,14 @@ public class MessageProducerServlet extends HttpServlet {
         }
 
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        try {
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!SENDING MESSAGE!!!!!!!!!!!!!!!!!!!!!!");
+    @Override
+    protected final void doGet(final HttpServletRequest request,
+                               final HttpServletResponse response)
+            throws ServletException, IOException {
+
+       try {
+            System.out.println("!!!!!!!!SENDING MESSAGE!!!!!!!");
             String name = request.getParameter("name");
             TextMessage message = topicSession.createTextMessage(name);
             topicPublisher.publish(message);
@@ -55,7 +70,8 @@ public class MessageProducerServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        request.getRequestDispatcher("WEB-INF/jsps/input.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsps/input.jsp")
+                .forward(request, response);
     }
 
     private static Context getContext() throws NamingException {
@@ -64,4 +80,5 @@ public class MessageProducerServlet extends HttpServlet {
         final Context context = new InitialContext(p);
         return context;
     }
+
 }
