@@ -57,6 +57,7 @@ public class MessageProducerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         //transaction identifier
+        //        global transaction ID,         branch qualifier ID).
         Xid xid = new MysqlXid(new byte[]{0x01}, new byte[]{0x02}, 100);
 
         //prepare audit data
@@ -71,7 +72,7 @@ public class MessageProducerServlet extends HttpServlet {
                     "mashdb.ticket values (null,'terminator',100,'" + user + '/' + date + "')");
             xaRes1.end(xid, XAResource.TMSUCCESS);
 
-
+            //second transaction branch joins to first
             xaRes1.start(xid, XAResource.TMJOIN);
             conn1.createStatement().executeUpdate("insert into " +
                     "mashdb.ticket values (null,'titanic',120,'" + user + '/' + date + "')");
@@ -96,6 +97,9 @@ public class MessageProducerServlet extends HttpServlet {
         super.finalize();
         if (xaConn1 != null) {
             xaConn1.close();
+        }
+        if (conn1 != null) {
+           conn1.close();
         }
     }
 
