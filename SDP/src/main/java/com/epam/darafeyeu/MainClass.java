@@ -13,7 +13,7 @@ public class MainClass {
         // reasonably clean and free of corruption that would be brought
         // there by direct usage of Ticket stuff
         AntiCorruptionLayer antiCorruptionLayer =
-            new AntiCorruptionLayer("Terminator");
+             new AntiCorruptionLayer("Terminator");
 
         if ( antiCorruptionLayer.isAvailable(new Date()) ) {
 

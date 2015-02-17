@@ -15,16 +15,16 @@ public class AntiCorruptionLayer {
         this.ticket = new Ticket();
     }
 
-    public void reserve (int count) {
-        ticket.reserve(filmName, count);
+    public void reserve ( int count ) {
+        ticket.reserve( filmName, count );
     }
 
     public void buy (int count) {
-        ticket.buy (filmName, count);
+        ticket.buy ( filmName, count );
     }
 
     public boolean isAvailable(Date date) {
-        return ticket.isAvailable(filmName, date);
+        return ticket.isAvailable( filmName, date );
     }
 
 }

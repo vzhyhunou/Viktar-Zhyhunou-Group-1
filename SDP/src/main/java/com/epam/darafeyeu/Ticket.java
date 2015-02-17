@@ -9,11 +9,11 @@ public class Ticket {
 
 
   void reserve (String filmName, int count) {
-     // reserve code here
+    // reserve code here
   }
 
   public void buy (String filmName, int count) {
-     // buy code here
+   // buy code here
   }
 
   public Boolean isAvailable (String filmName, Date date) {
