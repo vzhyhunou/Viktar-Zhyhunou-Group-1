@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface PersonDAO {
 
-    public List<Person> getAllPersons();
+    public List<Person> getAllPersons()  ;
 
     public Person getPerson(Integer personId) throws PersonNotFoundException;
 
