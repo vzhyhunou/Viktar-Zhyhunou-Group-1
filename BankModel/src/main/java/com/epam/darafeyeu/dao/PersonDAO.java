@@ -16,5 +16,5 @@ public interface PersonDAO {
 
     public void addPerson(Person person);
 
-    public void  deletePerson(Integer id) throws PersonNotFoundException ;
+    public void  deletePerson(Integer id) throws PersonNotFoundException               ;
 }
