@@ -18,7 +18,7 @@ public interface PersonDAO {
 
     public void addPerson(Person person) ;
 
-    //rel-7
+    //rel-9
 
     public void  deletePerson(Integer id) throws PersonNotFoundException;
 }
